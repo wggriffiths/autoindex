@@ -1,4 +1,4 @@
-// Polish langauge file by Krzysztof Kopeæ <kkrzys67@wp.pl>
+// Polish langauge file by Krzysztof KopeÄ‡ <kkrzys67@wp.pl>
 
 index of	Index of
 parent directory	Katalog macierzysty
@@ -10,9 +10,9 @@ files	Pliki
 folder	Folder
 folders	Foldery
 size	Rozmiar 
-total size	Ca³kowity rozmiar 
-total downloads	Suma pobrañ
-total	Ca³kowity
+total size	CaÅ‚kowity rozmiar 
+total downloads	Suma pobraÅ„
+total	CaÅ‚kowity
 date	Zmodyfikowany
 description	Opis 
 downloads	Pobierz
@@ -24,65 +24,65 @@ both	Obaj
 search results for	Rezultat wyszukiwania
 and its subdirectories	i jego podkatalogi 
 
-account	Konto u¿ytkownika 
+account	Konto uÅ¼ytkownika 
 login	Zaloguj
 logout	Wyloguj
-username	Nazwa u¿ytkownika
-password	Has³o
+username	Nazwa uÅ¼ytkownika
+password	HasÅ‚o
 select user to remove	Wybierz uzytkownika do przeniesienia
-are you sure you want to remove the user	Czy jesteœ pewien ¿e chcesz przenieœæ u¿ytkownika
-delete this user	Skasuj tego u¿ytkownika 
-add user	Dodaj u¿ytkownika
+are you sure you want to remove the user	Czy jesteÅ› pewien Å¼e chcesz przenieÅ›Ä‡ uÅ¼ytkownika
+delete this user	Skasuj tego uÅ¼ytkownika 
+add user	Dodaj uÅ¼ytkownika
 
-guest	Goœæ
-user	U¿ytkownik
+guest	GoÅ›Ä‡
+user	UÅ¼ytkownik
 mod	Moderator
 admin	Administrator
-level	Poziom u¿ytkownika 
+level	Poziom uÅ¼ytkownika 
 
-rename	zmieñ nazwê / przenieœ
-renaming	Zmieniaj¹c nazwê 
+rename	zmieÅ„ nazwÄ™ / przenieÅ›
+renaming	ZmieniajÄ…c nazwÄ™ 
 new filename	Nowa nazwa filmu
-you can also move the file by specifying a path	mo¿esz te¿ przenieœæ plik przez wyszczególnianie œcie¿ki dostêpu 
+you can also move the file by specifying a path	moÅ¼esz teÅ¼ przenieÅ›Ä‡ plik przez wyszczegÃ³lnianie Å›cieÅ¼ki dostÄ™pu 
 delete	Skasuj
-are you sure you want to delete the file	Czy jesteœ pewien ¿e chcesz usun¹æ plik
+are you sure you want to delete the file	Czy jesteÅ› pewien Å¼e chcesz usunÄ…Ä‡ plik
 edit description	Edytuj opis 
 yes, delete	Yes, delete it
 
-upload	Za³aduj
+upload	ZaÅ‚aduj
 files to this folder	Plik(i) do tego folderu
-uploaded files	Za³adowane pliki 
-failed files	Nie zdo³ane pliki 
-none	¯aden 
-file already exists	Plik ju¿ istnieje
-filename is listed as a hidden file	nazwa zbioru jest opisana jako zbiór ukryty
+uploaded files	ZaÅ‚adowane pliki 
+failed files	Nie zdoÅ‚ane pliki 
+none	Å»aden 
+file already exists	Plik juÅ¼ istnieje
+filename is listed as a hidden file	nazwa zbioru jest opisana jako zbiÃ³r ukryty
 
 reconfigure script	Rekonfiguracja skryptu
-create new directory in this folder	Utwórz nowy katalog w tym folderze
-edit list of hidden files	Edytuj listê plików/folderów ukrytych 
-add new user	Dodaj nowego u¿ytkownika
-delete user	Usuñ u¿ytkownika
+create new directory in this folder	UtwÃ³rz nowy katalog w tym folderze
+edit list of hidden files	Edytuj listÄ™ plikÃ³w/folderÃ³w ukrytych 
+add new user	Dodaj nowego uÅ¼ytkownika
+delete user	UsuÅ„ uÅ¼ytkownika
 copy url	Copy a remote file (to this folder)
 upload to ftp	upload file to FTP server
 
-enter the new description for the file	WprowadŸ nowy opis do pliku 
-change	Zmieñ 
-enter the new name	WprowadŸ now¹ nazwê
-create	Utwórz
+enter the new description for the file	WprowadÅº nowy opis do pliku 
+change	ZmieÅ„ 
+enter the new name	WprowadÅº nowÄ… nazwÄ™
+create	UtwÃ³rz
 
 add	Dodaj
-remove	Przenieœ
-remove a hidden file	Przenieœ zbiór ukryty 
-add a new hidden file	Dodaj nowy zbiór ukryty
+remove	PrzenieÅ›
+remove a hidden file	PrzenieÅ› zbiÃ³r ukryty 
+add a new hidden file	Dodaj nowy zbiÃ³r ukryty
 
-edit ban list	Edytuj listê zakazanych IPs i hostnames 
-remove a ban	Usuñ zakaz
-add a new ban	Dodaj nowy zakaz (adres IP albo hostname, mo¿esz u¿yæ znaków uniwersalnych)
-the administrator has blocked your ip address or hostname	Przepraszam, administrator zablokowa³ twój adres IP albo hostname
+edit ban list	Edytuj listÄ™ zakazanych IPs i hostnames 
+remove a ban	UsuÅ„ zakaz
+add a new ban	Dodaj nowy zakaz (adres IP albo hostname, moÅ¼esz uÅ¼yÄ‡ znakÃ³w uniwersalnych)
+the administrator has blocked your ip address or hostname	Przepraszam, administrator zablokowaÅ‚ twÃ³j adres IP albo hostname
 
 view entries from log file	Zapis widoku z pliku rejestru
 view statistics from log file	Statystyki widoku z pliku rejestru
-how many entries would you like to view	Jak wiele zapisów chcia³byœ ogl¹dn¹æ
+how many entries would you like to view	Jak wiele zapisÃ³w chciaÅ‚byÅ› oglÄ…dnÄ…Ä‡
 view	Widok
 page	Page
 of	of
