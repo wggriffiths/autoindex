@@ -1,0 +1,16 @@
+1)  I had to put the autoindex.php and other files in the document 
+root.
+They needed to be in the same directory as modules.php.
+
+2) I had to comment out a function for is_admin() because PHPNuke 
+already
+uses that.
+
+3) With your help I changed the URL to say doc=$filename instead of
+file=$filename because PHPNuke already uses the file= syntax.
+
+4) I had to comment out some of the stuff in your script that created 
+the
+body tags etc. because that stuff is already done by PHPNuke's 
+header.php
+file.
