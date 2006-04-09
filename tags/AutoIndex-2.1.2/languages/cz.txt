@@ -1,0 +1,89 @@
+// Český překlad, vytvořil the_pest
+
+index of	Výpis z
+parent directory	Nadřazený adresář
+thumbnail of	Miniatura of
+continue	Pokračovat
+
+file	Soubor
+files	Soubory
+folder	Složka
+folders	Složky
+size	Velikost
+total size	Celková velikost
+total downloads	Celkem staženo
+total	Total
+date	Upraveno
+description	Popis
+downloads	Staženo
+type	Typ
+sort by	Třídit podle
+
+search	Vyhledat
+both	Vše
+search results for	výsledky vyhledávání pro
+and its subdirectories	a jeho podsložky
+
+account	Uživatelský účet
+login	Přihlásit
+logout	Odhlásit
+username	Uživatelské jméno
+password	Heslo
+select user to remove	vyberte uživatele pro smazání
+are you sure you want to remove the user	Jste si jist, že chcete smazat uživatele
+delete this user	Smazat uživatele
+add user	Přidat uživatele
+
+guest	Host
+user	Uživatel
+mod	Moderátor
+admin	Administrátor
+level	Uživatelská úrověň
+
+rename	přejmenovat/přesunout
+renaming	Přejmenování
+new filename	Nové jméno souboru
+you can also move the file by specifying a path	můžete také přesunout soubor určením cesty
+delete	smazat
+are you sure you want to delete the file	Jste si jist, že chcete smazat soubor
+edit description	upravit popis
+yes, delete	Ano, smazat
+
+upload	Nahrát
+files to this folder	soubor(ů) do této složky
+uploaded files	Nahraté soubory
+failed files	Nahrávaní selhalo
+none	Žádné
+file already exists	soubor již existuje
+filename is listed as a hidden file	jméno souboru je v seznamu skrytých souborů
+
+reconfigure script	Překonfigurovat skript
+create new directory in this folder	Vytvořit nový adresář (v této složce)
+edit list of hidden files	Upravit seznam skrytých souborů
+add new user	Přidat nového uživatele
+delete user	Smazat uživatele
+copy url	Kopírovat vzdálený soubor (do této složky)
+upload to ftp	nahrát soubor na FTP server
+
+enter the new description for the file	Vložit nový popis k souboru
+change	Změnit
+enter the new name	Vložit nové jméno
+create	Vytvořit
+
+add	Přidat
+remove	Odebrat
+remove a hidden file	Odebrat skrytý soubor
+add a new hidden file	Přidat skrytý soubor
+
+edit ban list	Upravit seznam zakázaných IP adres a hostnames
+remove a ban	Odebrat zákaz
+add a new ban	Přidat nový zákaz (IP addresa nebo hostname, můžete použít značek např *.host.cz)
+the administrator has blocked your ip address or hostname	Promiňte, ale správce zablokoval vaši IP adresu nebo hostname
+
+view entries from log file	Zobrazit návštěvy z logu
+view statistics from log file	Zobrazit statistiky z logu
+how many entries would you like to view	Kolik položek chcete zobrazit
+view	Zobrazit
+
+calculate md5sum	spočítat md5sum
+download directory as tar.gz archive	Stáhnout složku jako tar.gz archiv
