@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<link href="stylesheet.css" rel="stylesheet" title="AutoIndex Default" type="text/css" />
+	<title>AutoIndex PHP Script: Change Log</title>
+</head>
+
+<body class="autoindex_body">
+
+<h4 style="text-align: center;"><a class="default_a" href="http://autoindex.sourceforge.net"><span style="color: #000000;">AutoIndex PHP Script</span></a>, by <a class="default_a" href="mailto:JustinHagstrom [at] yahoo [dot] com"><span style="color: #000000;">Justin Hagstrom</span></a></h4>
+<h5 style="text-align: center;">Change Log</h5>
+
+<p>
+	&nbsp;
+</p>
+
+<table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr class="fixed_width"><td class="default_td">
+<div style="font-size: 12px;">
+
+<p>
+	<strong>Legend</strong>:
+	<br />(+) Added feature
+	<br />(!) Security bug fixed
+	<br />(-) Bug fixed
+	<br />(*) Improved/changed feature
+	<br />( ) Non-code change
+</p>
+<p>
+	&nbsp;
+</p>
+<p>
+	<strong>Version 1.5.4</strong> (2005-Aug-11)
+	<br />(-) Fixed bug when editing descriptions of filenames that have special characters
+</p>
+<p>
+	<strong>Version 1.5.3</strong> (2005-Jul-06)
+	<br />(!) Fixed bug with search box
+	<br />( ) Added Slovak translation
+</p>
+<p>
+	<strong>Version 1.5.2</strong> (2005-Jan-04)
+	<br />(-) Fixed <em>folder_expansion</em>
+	<br />( ) Added Esperanto translation
+</p>
+<p>
+	<strong>Version 1.5.1</strong> (2004-Oct-04)
+	<br />(-) Fixed <em>show_folder_count</em> (broken since 1.5.0)
+</p>
+<p>
+	<strong>Version 1.5.0</strong> (2004-Sep-02)
+	<br />(+) When <em>force_download</em> is on, the MIME-type sent depends on the file extension
+	<br />(*) <em>show_only_these_files</em> no longer restricts directories
+</p>
+<p>
+	<strong>Version 1.4.9</strong> (2004-Aug-17)
+	<br />(*) Folders do not have to be empty to be deleted
+	<br />( ) Added Hebrew translation
+</p>
+<p>
+	<strong>Version 1.4.8</strong> (2004-Jul-13)
+	<br />(*) All output is XHTML 1.1 compliant
+	<br />( ) Added Serbian translation
+</p>
+<p>
+	<strong>Version 1.4.7</strong> (2004-Jun-18)
+	<br />(-) Changing account password fixed
+	<br />(*) More file extensions are matched to icons
+</p>
+<p>
+	<strong>Version 1.4.6</strong> (2004-Jun-02)
+	<br />(*) Admins can view hidden files
+	<br />( ) Added Albanian translation
+</p>
+<p>
+	<strong>Version 1.4.5</strong> (2004-May-11)
+	<br />(-) Stored info for files is updated even when a parent folder is renamed
+</p>
+<p>
+	<strong>Version 1.4.4</strong> (2004-May-04)
+	<br />(*) When the config file is rewritten, the older version is backed up
+	<br />(-) Removed the file owner lookup to increase compatibility
+	<br />( ) Added Estonian, Vietnamese, and Greek translations
+</p>
+<p>
+	<strong>Version 1.4.3</strong> (2004-Apr-10)
+	<br />(+) Added an option to ban IP addresses or hostnames
+	<br />(-) Files that take longer than 30 seconds to download now work with <em>force_download</em> on
+	<br />(*) <em>dont_log_these_ips</em> can also contain hostnames
+	<br />(*) Uploads are logged if the logging system is on
+	<br />( ) Added another icon set (MacOS X style)
+	<br />( ) Added Turkish translation
+</p>
+<p>
+	<strong>Version 1.4.2</strong> (2004-Mar-26)
+	<br />(+) Added an image thumbnailing feature (requires GDlib 2.0.1 or higher)
+	<br />(-) Hostnames are correctly resolved for logging (broken since 1.4.0)
+	<br />( ) Added another icon set (KDE style)
+	<br />( ) Added Latvian translation
+</p>
+<p>
+	<strong>Version 1.4.1</strong> (2004-Mar-24)
+	<br />(-) Script works when posix_getpwuid() is disabled on UNIX-like systems
+	<br />(+) Folders can be created recursively
+	<br />(*) The header and footer (if specified) are added to all pages displayed
+</p>
+<p>
+	<strong>Version 1.4.0</strong> (2004-Mar-12)
+	<br />(+) The script is configured through the web browser, rather than by directly editing the php file
+	<br />(+) Added a filetype column, and made it optional to show each column
+	<br />(+) Added some basic compatibility for PHP 4.0.x
+	<br />(-) The directory list is not regenerated when a file is downloaded
+	<br />( ) Renamed <em>AutoIndex.php</em> to <em>index.php</em>
+	<br />( ) Forums moved to <a class="default_a" href="http://autoindex.sourceforge.net/forum/">http://autoindex.sourceforge.net/forum/</a>
+</p>
+<p>
+	<strong>Version 1.3.8</strong> (2004-Feb-22)
+	<br />(-) Fixed the blank page problem that happened with certain php configurations
+</p>
+<p>
+	<strong>Version 1.3.7</strong> (2004-Feb-06)
+	<br />(+) Added an editor for the links file
+	<br />(-) Works with zlib.output_compression turned on
+	<br />(*) Links are included in searches (as files)
+	<br />(*) Improved searching interface
+	<br />( ) Added Czech translation
+</p>
+<p>
+	<strong>Version 1.3.6</strong> (2004-Jan-17)
+	<br />(+) Admins can rename files using the script
+	<br />(*) You have to confirm any file/folder deletes
+	<br />(*) You can set the display name for links
+	<br />(*) Improved the get_filesize function
+	<br />( ) Added Icelandic and Japanese translations
+</p>
+<p>
+	<strong>Version 1.3.5</strong> (2004-Jan-12)
+	<br />(-) Uploading works with absolute paths
+	<br />(-) Stylesheet doesn't interfere with other tables
+	<br />(*) Got rid of the <em>show_dot_files feature</em>, since you can just add &quot;.*&quot; to <em>hidden_files</em>
+	<br />( ) Added another set of icons (WinXP style)
+	<br />( ) Added Malay and Korean translations
+</p>
+<p>
+	<strong>Version 1.3.4</strong> (2004-Jan-02)
+	<br />(+) Added an option to only allow logged in users to view/download files
+	<br />(+) Added a feature to only show certain files
+	<br />(+) Added an option to allow the md5sum of a file to be calculated and shown
+	<br />(-) Fixed problems when quotes are in strings
+	<br />(-) Fixed URL encoding on IIS servers
+	<br />(-) Fixed a bug with the upload feature (it still only works with relative paths, though)
+	<br />(*) Usernames are treated as case-insensitive
+	<br />( ) <em>userlist.txt</em> has been renamed to <em>.htpasswd.autoindex</em> to increase security
+	<br />( ) Added Catalan and Thai translations
+	<br />(*) Many small code changes
+</p>
+<p>
+	<strong>Version 1.3.3</strong> (2003-Dec-24)
+	<br />(*) Completely rewrote the format for log files
+	<br /><strong>NOTE</strong>: you will have to start with an empty file for your log when you upgrade - you can't carry over your old log
+	<br />(*) Rewrote the log viewer (in the admin section)
+	<br />(*) Added a list to lookup the hostname country codes
+	<br />(*) When descriptions are edited, the current description is shown in the textbox
+	<br />( ) Added Romanian and Hungarian translations
+</p>
+<p>
+	<strong>Version 1.3.2</strong> (2003-Dec-19)
+	<br />(-) Fixed some small problems with the force download feature
+	<br />(-) Only the filename (not the full path) is included for hidden file
+	<br />(*) Searches no longer need wildcards (&quot;simple search&quot; by default)
+	<br />(*) Improved the anti-leech feature
+	<br />( ) Added Finnish translation
+	<br />(*) Many small changes, improvements, and bug fixes
+</p>
+<p>
+	<strong>Version 1.3.1</strong> (2003-Dec-15)
+	<br />(-) Fixed a problem with logins on some servers
+	<br />(-) Headers/footers are only included if they exist
+	<br />(*) The downloads column has a total at the bottom
+	<br />( ) Added Lithuanian translation
+</p>
+<p>
+	<strong>Version 1.3.0</strong> (2003-Dec-14)
+	<br />(+) Each file/folder is in its own row in the table (instead of just separating them with linebreaks)
+	<br />(+) Files can have custom descriptions (you can edit them in the admin section)
+	<br />(+) Links to files on other websites can be listed
+	<br />(+) Admins are able to copy files from other servers (similar to &quot;wget&quot;)
+	<br />(*) The number of file downloads has its own column
+	<br />(*) Many small changes and improvements
+</p>
+<p>
+	<strong>Version 1.2.6</strong> (2003-Dec-07)
+	<br />(+) Added an option to identify new files and folders
+	<br />(-) Fixed a bug with deleting files
+	<br />(*) Cleaned up the force_download code
+	<br />(*) The header is displayed before the table is started
+	<br />(*) Searches are saved after a search, as are all other selections
+	<br />(*) Updated the stylesheet
+</p>
+<p>
+	<strong>Version 1.2.5</strong> (2003-Nov-28)
+	<br />(+) Lists can be sorted by Date and Filesize
+	<br />(+) Admins can delete files and create/delete folders (<strong>NOTE</strong>: delete doesn't work properly until 1.2.6)
+	<br />(+) Added a log viewer in the admin section
+	<br />(-) The last remaining admin now cannot be deleted
+	<br />(*) Added an option to let the user view the script in any language
+	<br />(*) Added an option to use simple searches (no wildcards needed and not case sensitive)
+	<br />(-) Some small bug fixes
+</p>
+<p>
+	<strong>Version 1.2.4</strong> (2003-Nov-16)
+	<br />(+) Added an option to keep track of the number of times a file has been downloaded
+	<br />(!) [XSS vulnerability] A parameter could contain HTML code (present in 1.1.0 through 1.2.3)
+	<br />(*) Files in <em>hidden_files</em> now cannot be uploaded
+	<br />(*) Lists are sorted by &quot;natural sort&quot;
+	<br />( ) Added Brazilian Portuguese and Swedish translations
+	<br />( ) Forums moved to <a class="default_a" href="http://autoindex.tacticalcenter.net">http://autoindex.tacticalcenter.net</a>
+</p>
+<p>
+	<strong>Version 1.2.3</strong> (2003-Nov-13)
+	<br />(-) Fixed a bug when there are files/folders that PHP does not have permission to read
+	<br />(-) All special characters are escaped for the regular expression matching
+	<br />(*) IP addresses to not log can include wildcards (*, +, ?)
+	<br />(*) When adding a new user, the username must follow a regular expression
+	<br />(*) Added a few more extensions to give icons to
+</p>
+<p>
+	<strong>Version 1.2.2</strong> (2003-Oct-23)
+	<br />(*) More than one folder can be expanded at once
+	<br />(*) Icons are shown for expanded folders
+	<br />(*) PHP Sessions are used to store certain variables
+	<br />(*) Each language has its own file
+	<br />( ) Added Dutch, Polish, and Russian translations
+</p>
+<p>
+	<strong>Version 1.2.1</strong> (2003-Oct-17)
+	<br />(-) Fixed bugs when using the <em>index</em> feature
+	<br />(-) Setting <em>show_dot_files</em> to 0 works correctly
+	<br />(*) Improved file uploading (added an option to allow files to be overwritten)
+	<br />( ) Added Bulgarian and Norwegian translations
+</p>
+<p>
+	<strong>Version 1.2.0</strong> (2003-Oct-11)
+	<br />(+) Added the ability to upload files
+	<br />(+) User accounts and Login support added
+	<br />(+) Wildcard matching: hidden files and searches can include wildcards (*, +, ?)
+	<br />(*) Removed a few &quot;useless&quot; features
+	<br />(-) A few small bug fixes
+</p>
+<p>
+	<strong>Version 1.1.6</strong> (2003-Oct-07)
+	<br />(*) Made a separate file for localizations
+	<br />(-) Fixed a small bug in the HTML, effecting tables (present in 1.0.7 through 1.1.5)
+	<br />(-) URLs are URLEncoded
+	<br />( ) Added German, French, Danish, and Chinese translations
+</p>
+<p>
+	<strong>Version 1.1.5</strong> (2003-Sep-13)
+	<br />(+) Added localization support (so far: English, Italian, and Spanish)
+	<br />(-) Fixed a bug with downloading files from search results (present in 1.1.0 through 1.1.4)
+</p>
+<p>
+	<strong>Version 1.1.4</strong> (2003-Aug-12)
+	<br />(+) Added an option to show files/folders that start with a period
+	<br />(+) Added an option to not allow subdirectory access
+	<br />(-) A few small bug fixes
+</p>
+<p>
+	<strong>Version 1.1.3</strong> (2003-Jun-22)
+	<br />(!) Fixed a bug with viewing files/folders above the root folder on Windows servers (present in 1.1.0 through 1.1.2)
+</p>
+<p>
+	<strong>Version 1.1.2</strong> (2003-Jun-13)
+	<br />(*) Improved the anti-leech feature: it now also uses cookies (<strong>NOTE</strong>: this doesn't work properly until 1.1.4)
+</p>
+<p>
+	<strong>Version 1.1.1</strong> (2003-Jun-02)
+	<br />(-) Fixed a bug when downloading files with <em>force_download</em> turned on
+	<br />(+) Added a bandwidth limit feature
+	<br />( ) Project is now hosted at <a class="default_a" href="http://autoindex.sourceforge.net">http://autoindex.sourceforge.net</a>
+</p>
+<p>
+	<strong>Version 1.1.0</strong> (2003-May-17)
+	<br />(*) Fixed up code, so now error displaying doesn't need to be turned off
+	<br />(*) &quot;..&quot; is recognized in pathnames (<strong>NOTE</strong>: this creates a security bug on Windows servers. Fixed in 1.1.3)
+	<br />(*) Improved error checking (<strong>NOTE</strong>: this creates a small security bug. Fixed in 1.2.4)
+	<br />(*) Got rid of the old stylesheet
+</p>
+<p>
+	<strong>Version 1.0.9</strong> (2003-Mar-11)
+	<br />(-) Fixed bug which occurred when there was an apostrophe in the file/folder name
+	<br />(-) File/folder names in Win32 are treated as case insensitive
+	<br />(*) Added more searching features
+</p>
+<p>
+	<strong>Version 1.0.8</strong> (2003-Mar-04)
+	<br />(-) Fixed a bug with file naming when <em>force_download</em> is on
+</p>
+<p>
+	<strong>Version 1.0.7</strong> (2003-Feb-23)
+	<br />(-) Fixed a bug in the html: a table was not closed (<strong>NOTE</strong>: this actually creates a small bug present until 1.1.6)
+	<br />(*) The filename of the script is specified in the link
+</p>
+<p>
+	<strong>Version 1.0.6</strong> (2003-Feb-19)
+	<br />(-) Fixed a bug with file downloads if using an absolute path
+</p>
+<p>
+	<strong>Version 1.0.5</strong> (2003-Feb-14)
+	<br />(+) Added more options with headers/footers
+</p>
+<p>
+	<strong>Version 1.0.4</strong> (2003-Feb-12)
+	<br />(!) Hidden files/folders cannot be viewed even if their name is specified in the URL
+	<br />(*) Added a few more icons for file extensions
+</p>
+<p>
+	<strong>Version 1.0.3</strong> (2003-Feb-08)
+	<br />(-) If <em>show_extension</em> is FALSE, extensions are no longer included in the search
+	<br />(-) Spaces in URLs are encoded to %20 (<strong>NOTE</strong>: the rest of the URL encoding bugs are fixed in 1.1.6 and 1.3.4)
+	<br />(*) Improved the error checking and error messages
+	<br />(*) Fixed up some of the HTML tables
+</p>
+<p>
+	<strong>Version 1.0.2</strong> (2003-Jan-31)
+	<br />(*) Server OS is automatically determined; you don't need to specify it
+</p>
+<p>
+	<strong>Version 1.0.1</strong> (2003-Jan-30)
+	<br />(+) Added an option to not log access from certain IPs
+	<br />(*) Searches are logged
+	<br />(*) Added more icons for file extensions
+</p>
+<p>
+	<strong>Version 1.0.0</strong> (2003-Jan-29)
+	<br />( ) First non-beta quality release
+</p>
+<p>
+	<strong>Beta Versions</strong> (2002-Dec-??)
+	<br />( ) Although they were labeled &quot;Version 3.x&quot; they are beta versions
+</p>
+
+</div>
+</td></tr></table>
+
+</body>
+</html>
