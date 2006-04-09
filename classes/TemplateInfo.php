@@ -3,7 +3,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2006 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -41,7 +41,7 @@ if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
  * - table footer
  *
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
- * @version 1.1.0 (January 01, 2006)
+ * @version 1.0.1 (July 21, 2004)
  * @package AutoIndex
  */
 class TemplateInfo extends Template
@@ -98,56 +98,6 @@ class TemplateInfo extends Template
 			{
 				global $you;
 				return $you -> login_box();
-			}
-			case 'current_page_number':
-			{
-				if (!ENTRIES_PER_PAGE)
-				{
-					return 1;
-				}
-				global $page;
-				return $page;
-			}
-			case 'last_page_number':
-			{
-				if (!ENTRIES_PER_PAGE)
-				{
-					return 1;
-				}
-				global $max_page;
-				return $max_page;
-			}
-			case 'previous_page_link':
-			{
-				if (!ENTRIES_PER_PAGE)
-				{
-					return '';
-				}
-				global $config, $page;
-				if ($page <= 1)
-				{
-					return '&lt;&lt;';
-				}
-				return '<a class="autoindex_a" href="'
-				. $_SERVER['PHP_SELF'] . '?page=' . ($page - 1)
-				. '&amp;dir=' . substr($this -> dir_list -> __get('dir_name'),
-					strlen($config -> __get('base_dir'))) . '">&lt;&lt;</a>';
-			}
-			case 'next_page_link':
-			{
-				if (!ENTRIES_PER_PAGE)
-				{
-					return '';
-				}
-				global $config, $page, $max_page;
-				if ($page >= $max_page)
-				{
-					return '&gt;&gt;';
-				}
-				return '<a class="autoindex_a" href="'
-				. $_SERVER['PHP_SELF'] . '?page=' . ($page + 1)
-				. '&amp;dir=' . substr($this -> dir_list -> __get('dir_name'),
-					strlen($config -> __get('base_dir'))) . '">&gt;&gt;</a>';
 			}
 			default:
 			{

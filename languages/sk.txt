@@ -84,8 +84,6 @@ view entries from log file	Zobraziť návštevy z logu
 view statistics from log file	Zobraziť štatistiky z logu
 how many entries would you like to view	Koľko položiek chcete zobraziť
 view	Zobraziť
-page	Page
-of	of
 
 calculate md5sum	spočítať md5sum
 download directory as tar.gz archive	Stiahnúť zložku ako tar.gz archív

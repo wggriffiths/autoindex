@@ -84,8 +84,6 @@ view entries from log file	Veure entrades del fitxer de registre
 view statistics from log file	Veure estad&iacute;stiques del fitxer de registre
 how many entries would you like to view	Quantes entrades voleu veure
 view	Veure
-page	Page
-of	of
 
 calculate md5sum	calcular md5sum
 download directory as tar.gz archive	Descarregar directori com arxiu tar.gz

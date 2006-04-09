@@ -84,8 +84,6 @@ view entries from log file	แสดงรายการจากล็อกไฟล์
 view statistics from log file	แสดงสถิติจากล็อกไฟล์
 how many entries would you like to view	จำนวนของรายการที่คุณต้องการที่จะแสดง
 view	แสดง
-page	Page
-of	of
 
 calculate md5sum	คำนวณ MD5
 download directory as tar.gz archive	ดาวน์โหลดไดเร็กโทรี่เป็นไฟล์ tar.gz

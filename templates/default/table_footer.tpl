@@ -26,24 +26,9 @@
 		   This not only gives respect to the large amount of time given freely by the
 		   developer, but also helps build interest, traffic, and use of AutoIndex. */
 
-
-{if:entries_per_page}
-<p>
-	{words:page}
-	{info:previous_page_link}
-	{info:current_page_number}
-	{info:next_page_link}
-	{words:of} {info:last_page_number}
-</p>
-{end if:entries_per_page}
-
-
 {if:archive}
-<div class="autoindex_small" style="text-align: left;">
-	<a class="autoindex_a" href="{info:archive_link}">{words:download directory as tar.gz archive}</a>
-</div>
+<div class="autoindex_small" style="text-align: left;"><a class="autoindex_a" href="{info:archive_link}">{words:download directory as tar.gz archive}</a></div>
 {end if:archive}
-
 
 <p />
 <table class="autoindex_table">

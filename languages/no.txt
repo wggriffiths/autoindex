@@ -84,8 +84,6 @@ view entries from log file	Vis oppf&oslash;ringer fra logfil
 view statistics from log file	Vis statistikk fra logfil
 how many entries would you like to view	Hvor mange oppf&oslash;ringer vil du vise
 view	Vis
-page	Page
-of	of
 
 calculate md5sum	kalkuler md5sum
 download directory as tar.gz archive	Last ned mappe som tar.gz-arkiv

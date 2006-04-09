@@ -84,8 +84,6 @@ view entries from log file	Ver las entradas del archivo log
 view statistics from log file	Ver las estad&iacute;sticas del archivo log
 how many entries would you like to view	&iquest;Cu&aacute;ntas entradas desear&iacute;a usted ver
 view	Ver
-page	P&aacute;gina
-of	de
 
 calculate md5sum	calcular md5sum
 download directory as tar.gz archive	Descargar directorio como un archivo tar.gz

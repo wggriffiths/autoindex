@@ -84,8 +84,6 @@ view entries from log file	로그 파일 내용 보기
 view statistics from log file	로그 파일 통계 보기
 how many entries would you like to view	얼마나 많은 내용을 표시할까요
 view	보기
-page	Page
-of	of
 
 calculate md5sum	md5sum 계산
 download directory as tar.gz archive	디렉토리를 tar.gz 압축으로 다운받기

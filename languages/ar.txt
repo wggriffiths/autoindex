@@ -84,8 +84,6 @@ view entries from log file	ãÔÇåÏ ÇáãÏÎáÇÊ ãä ãáİ ÇáÇÍÕÇÆíÇÊ
 view statistics from log file	ãÔÇåÏÉ ÇáÅÍÕÇÆíÇÊ
 how many entries would you like to view	ßã ãÏÎá ÊÑíÏ ãÔÇåÏÊå
 view	ãÔÇåÏÉ
-page	Page
-of	of
 
 calculate md5sum	ÃÍÓÈ ÇáãÌãæÚ
 download directory as tar.gz archive	ãáİ ÇÑÔíİ tar.gz Íãá Çáãáİ Úáì åÆíÉ

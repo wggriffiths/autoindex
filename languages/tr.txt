@@ -84,8 +84,6 @@ view entries from log file	Logtan girdileri göster
 view statistics from log file	Logtan istatistikleri göster
 how many entries would you like to view	Kaç girdi görmek istiyorsunuz
 view	Göster
-page	Page
-of	of
 
 calculate md5sum	md5sum hesapla
 download directory as tar.gz archive	Dizini tar.gz arþiv olarak indir

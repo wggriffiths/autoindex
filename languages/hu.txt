@@ -85,8 +85,6 @@ view entries from log file	Logf&aacute;jl megtekint&eacute;se
 view statistics from log file	Statisztika a logf&aacute;jlb&oacute;l
 how many entries would you like to view	H&aacute;ny darabot szeretn&eacute;l l&aacute;tni
 view	Megn&eacute;z
-page	Page
-of	of
 
 calculate md5sum	md5 sz&aacute;mol&aacute;s
 download directory as tar.gz archive	K&ouml;nyvt&aacute;r let&ouml;lt&eacute;se tar.gz form&aacute;tumban

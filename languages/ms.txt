@@ -84,8 +84,6 @@ view entries from log file	Lihat masukkan dari catatan fail
 view statistics from log file	Lihat statistik dari catatan fail
 how many entries would you like to view	Berapa banyakkah masukkan hendak anda lihat
 view	Lihat
-page	Page
-of	of
 
 calculate md5sum	kira md5sum
 download directory as tar.gz archive	Muatturun direktori sebagai arkib tar.gz

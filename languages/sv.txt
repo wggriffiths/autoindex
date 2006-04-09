@@ -84,8 +84,6 @@ view entries from log file	Se anslutningar från loggfil
 view statistics from log file	Se statistik från loggfil
 how many entries would you like to view	Hur många anslutningar vill du se
 view	Se
-page	Page
-of	of
 
 calculate md5sum	Kalkylera md5sum
 download directory as tar.gz archive	Ladda ner mapp som tar.gz arkiv

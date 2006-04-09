@@ -3,7 +3,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2006 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -36,7 +36,7 @@ if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
  * the Item class.
  *
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
- * @version 1.1.0 (January 01, 2006)
+ * @version 1.0.1 (June 28, 2004)
  * @package AutoIndex
  */
 class DirectoryListDetailed extends DirectoryList
@@ -55,11 +55,6 @@ class DirectoryListDetailed extends DirectoryList
 	 * @var int Total number of folders in this directory
 	 */
 	protected $total_folders;
-	
-	/**
-	 * @var int Total number of folders in this directory (including parent)
-	 */
-	protected $raw_total_folders;
 	
 	/**
 	 * @var int Total number of downloads of files in this directory
@@ -145,18 +140,9 @@ class DirectoryListDetailed extends DirectoryList
 	}
 	
 	/**
-	 * @return int The total number of files and folders (including the parent folder)
+	 * @param string $path
 	 */
-	public function total_items()
-	{
-		return $this -> raw_total_folders + $this -> total_files;
-	}
-	
-	/**
-	 * @param string $path The directory to read the files from
-	 * @param int $page The number of files to skip (used for pagination)
-	 */
-	public function __construct($path, $page = 1)
+	public function __construct($path)
 	{
 		$path = Item::make_sure_slash($path);
 		parent::__construct($path);
@@ -198,28 +184,12 @@ class DirectoryListDetailed extends DirectoryList
 		$this -> contents = array_merge($dirs, $files);
 		$this -> total_size = new Size($total_size);
 		$this -> total_files = count($files);
-		$this -> raw_total_folders = $this -> total_folders = count($dirs);
+		$this -> total_folders = count($dirs);
 		if ($subtract_parent)
 		{
 			$this -> total_folders--;
 		}
 		$this -> path_nav = $this -> set_path_nav();
-		
-		//Paginate the files
-		if (ENTRIES_PER_PAGE)
-		{
-			if ($page < 1)
-			{
-				throw new ExceptionDisplay('Invalid page number.');
-			}
-			global $config;
-			$num_per_page = $config -> __get('entries_per_page');
-			if (($page - 1) * $num_per_page >= $this -> total_items())
-			{
-				throw new ExceptionDisplay('Invalid page number.');
-			}
-			$this -> contents = array_slice($this -> contents, ($page - 1) * $num_per_page, $num_per_page);
-		}
 	}
 	
 	/**

@@ -84,8 +84,6 @@ view entries from log file	Bekijk notities in het log bestand
 view statistics from log file	 Bekijk de statistieken in het log bestand
 how many entries would you like to view	Hoeveel notities wilt u bekijken
 view	Bekijken
-page	Page
-of	of
 
 calculate md5sum	Bereken md5sum
 download directory as tar.gz archive	Download map als tar.gz archief

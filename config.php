@@ -6,9 +6,9 @@
  *
  * @package AutoIndex
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
- * @version 1.2.0 (January 01, 2006)
+ * @version 1.1.0 (February 10, 2005)
  *
- * @copyright Copyright (C) 2002-2006 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2005 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -41,8 +41,7 @@ $strings = array('base_dir', 'icon_path', 'language', 'template', 'log_file',
 $checkboxes = array('show_dir_size', 'use_login_system', 'force_download',
 	'search_enabled', 'anti_leech', 'must_login_to_download', 'archive',
 	'parse_htaccess');
-$numbers = array('days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show',
-	'entries_per_page');
+$numbers = array('days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show');
 
 if (count($_POST) >= count($strings) + count($numbers))
 {
@@ -84,11 +83,6 @@ if (count($_POST) >= count($strings) + count($numbers))
 		{
 			$output .= "$setting\t0\n";
 			continue;
-		}
-		if ($_POST[$setting] < 0)
-		{
-			die(simple_display('The setting <em>'
-			. htmlentities($setting) . '</em> should not be a negitive number.'));
 		}
 		$_POST[$setting] = (string)((float)$_POST[$setting]);
 		$output .= "$setting\t{$_POST[$setting]}\n";
@@ -223,7 +217,6 @@ $settings = array(
 	'must_login_to_download' => 'false',
 	'archive' => 'false',
 	'days_new' => '0',
-	'entries_per_page' => '0',
 	'thumbnail_height' => '0',
 	'bandwidth_limit' => '0',
 	'md5_show' => '0',
@@ -386,17 +379,6 @@ Age for "New" Icon: <input type="text" name="days_new" size="3" value="<?php if 
 
 <p />
 <table width="650" cellpadding="8"><tr><td>
-Number of file entires per page: <input type="text" name="entries_per_page" size="3" value="<?php if ($settings['entries_per_page'] != 'false') echo $settings['entries_per_page']; ?>" />
-<p class="small">
-	This contains the number of files or folders to display on a single page.
-	If there are more files or folders, the display will be separated into different
-	pages with <code>Previous</code> and <code>Next</code> buttons.
-	<br />If it is set to 0, everything will be displayed on one page.
-</p>
-</td></tr></table>
-
-<p />
-<table width="650" cellpadding="8"><tr><td>
 Image Thumbnail Height: <input type="text" name="thumbnail_height" size="3" value="<?php if ($settings['thumbnail_height'] != 'false') echo $settings['thumbnail_height']; ?>" /> pixels
 <p class="small">
 	This is a feature that will show thumbnails next to images. (NOTE: GDlib 2.0.1 or higher is required)
@@ -491,25 +473,54 @@ Image Thumbnail Height: <input type="text" name="thumbnail_height" size="3" valu
 
 <p />
 <table width="650" cellpadding="8"><tr><td>
-Default Language: <select name="language">
+Language: <select name="language">
 <?php
-	$l = Language::get_all_langs(PATH_TO_LANGUAGES);
-	if ($l === false)
+	
+	/**
+	 * Returns a list of all files in $path that match the filename format
+	 * of language files.
+	 *
+	 * There are two valid formats for the filename of a language file. The
+	 * standard way is the language code then the .txt extension. You can
+	 * also use the language code followed by an underscore then the
+	 * country code. The second format would be used for dialects of
+	 * languages. For example pt.txt would be Portuguese, and pt_BR.txt
+	 * would be Brazilian Portuguese. The filenames are case insensitive.
+	 *
+	 * @param string $path The directory to read from
+	 * @return array The list of valid language files (based on filename)
+	 */
+	function get_all_langs($path)
 	{
-		$l = array('en');
+		if (($hndl = @opendir($path)) === false)
+		{
+			return array('en' . LANGUAGE_FILE_EXT);
+		}
+		$list = array();
+		while (($file = readdir($hndl)) !== false)
+		{
+			if (@is_file($path . $file) && preg_match('/^[a-z]{2}(_[a-z]{2})?'
+			. preg_quote(LANGUAGE_FILE_EXT, '/') . '$/i', $file))
+			{
+				$list[] = $file;
+			}
+		}
+		closedir($hndl);
+		return $list;
 	}
+	
+	$l = get_all_langs(PATH_TO_LANGUAGES);
 	sort($l);
 	foreach ($l as $lang)
 	{
-		$sel = (($lang == $settings['language']) ? ' selected="selected"' : '');
-		echo "\t\t<option$sel>$lang</option>\n";
+		$f = substr($lang, 0, -4);
+		$sel = (($f == $settings['language']) ? ' selected="selected"' : '');
+		echo "\t\t<option$sel>$f</option>\n";
 	}
 ?>
 </select>
 <p class="small">
-	The user's browser's default language is used, unless that language is
-	not available in AutoIndex. In that case, the language selected here is
-	used.
+	The language to display the script in.
 </p>
 </td></tr></table>
 
@@ -529,7 +540,7 @@ Default Language: <select name="language">
 <!--
 
 Powered by AutoIndex PHP Script (version <?php echo VERSION; ?>)
-Copyright (C) 2002-2006 Justin Hagstrom
+Copyright (C) 2002-2005 Justin Hagstrom
 http://autoindex.sourceforge.net
 
 Page generated in <?php echo round((microtime(true) - START_TIME) * 1000, 1); ?> milliseconds.

@@ -6,9 +6,9 @@
  *
  * @package AutoIndex
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
- * @version 1.2.0 (January 01, 2006)
+ * @version 1.1.0 (February 09, 2005)
  *
- * @copyright Copyright (C) 2002-2006 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2005 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -105,7 +105,7 @@ define('ADMIN', 3);
 define('LEVEL_TO_UPLOAD', USER);
 
 /** The version of AutoIndex PHP Script (the whole release, not based on individual files). */
-define('VERSION', '2.2.0');
+define('VERSION', '2.1.2');
 
 /**
  * This must be set to true for other included files to run. Setting it to
@@ -183,15 +183,12 @@ function simple_display($text, $title = 'Error on Page')
  */
 function __autoload($class)
 {
-	if ($class != 'self')
+	$file = PATH_TO_CLASSES . $class . '.php';
+	/** Try to load the class file. */
+	if (!@include_once($file))
 	{
-		$file = PATH_TO_CLASSES . $class . '.php';
-		/** Try to load the class file. */
-		if (!@include_once($file))
-		{
-			die(simple_display('Error including file <em>'
-			. htmlentities($file) . '</em> - cannot load class.'));
-		}
+		die(simple_display('Error including file <em>'
+		. htmlentities($file) . '</em> - cannot load class.'));
 	}
 }
 
@@ -232,7 +229,6 @@ try
 		. Url::html_output(CONFIG_STORED) . '</em> could be found.');
 	}
 	
-	
 	//find and store the user's IP address and hostname:
 	$ip = (isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'N/A');
 	if (isset($_SESSION['host']))
@@ -243,15 +239,18 @@ try
 	{
 		$_SESSION['host'] = $host = @gethostbyaddr($ip);
 	}
-
 	
-	//Create a language object:
-	$words = new Language();
+	//read the data from the language file:
+	$lang_file = PATH_TO_LANGUAGES . $config -> __get('language') . LANGUAGE_FILE_EXT;
+	if (!@is_readable($lang_file))
+	{
+		throw new ExceptionFatal('Cannot read from language file: <em>' 
+		. Url::html_output($lang_file) . '</em>');
+	}
+	$words = new ConfigData($lang_file);
 	
-	
-	//Create a logging object:
+	//create a logging object:
 	$log = new Logging($config -> __get('log_file'));
-	
 	
 	foreach ($config as $key => $item)
 	/* Go through each config setting, and set a constant with each setting's
@@ -269,12 +268,11 @@ try
 		define($key, ($item != 'false' && $item != '0'));
 	}
 	
-	
 	//make sure all required settings are set in the config file
 	foreach (array('base_dir', 'icon_path', 'language', 'template',
 		'log_file', 'description_file', 'user_list', 'download_count',
 		'hidden_files', 'banned_list', 'show_dir_size', 'use_login_system',
-		'force_download', 'search_enabled', 'anti_leech', 'entries_per_page',
+		'force_download', 'search_enabled', 'anti_leech',
 		'must_login_to_download', 'archive', 'days_new', 'thumbnail_height',
 		'bandwidth_limit', 'md5_show', 'parse_htaccess') as $set)
 	{
@@ -285,7 +283,6 @@ try
 			. '</em>');
 		}
 	}
-	
 	
 	/* From this point on, we can throw ExceptionDisplay rather than
 	 * Exception since all the configuration is done.
@@ -358,10 +355,8 @@ try
 		}
 	}
 	
-	
 	//size of the "chunks" that are read at a time from the file (when $force_download is on)
 	$speed = (BANDWIDTH_LIMIT ? $config -> __get('bandwidth_limit') : 8);
-	
 	
 	if (DOWNLOAD_COUNT)
 	{
@@ -377,7 +372,6 @@ try
 		}
 		$downloads = new ConfigData($config -> __get('download_count'));
 	}
-	
 	
 	//create a user object:
 	$log_login = false;
@@ -407,7 +401,6 @@ try
 			die();
 		}
 	}
-	
 	
 	//set the logged in user's home directory:
 	$dir = Item::make_sure_slash((($you -> home_dir == '') ? $config -> __get('base_dir') : $you -> home_dir));
@@ -614,9 +607,7 @@ try
 	}
 	else
 	{
-		$page = ((ENTRIES_PER_PAGE && isset($_GET['page'])) ? (int)$_GET['page'] : 1);
-		$dir_list = new DirectoryListDetailed($dir, $page);
-		$max_page = (ENTRIES_PER_PAGE ? (ceil($dir_list -> total_items() / $config -> __get('entries_per_page'))) : 1);
+		$dir_list = new DirectoryListDetailed($dir);
 	}
 	$log -> add_entry($search_log);
 	$str = $dir_list -> __toString();
