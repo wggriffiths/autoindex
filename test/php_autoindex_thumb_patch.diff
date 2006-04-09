@@ -1,0 +1,59 @@
+832a833,835
+> 	$path = dirname($file);  		//path to file being worked on
+> 	$basefile = basename($file);		//file name with out dir info of file
+> 	$tn = "$path/.tn/tn_$basefile";		//full path of thumbnail file
+838c841,850
+< 	switch (ext($file))
+---
+> 	if (!@is_dir("$path/.tn"))		//Looks for the .tn dir under the directory
+> 	{					//being worked on.  If it does not exist, it
+> 	mkdir("$path/.tn", 0755);		//is created.
+> 	}					//added by Fran
+> 	
+> 	if (@is_file($tn))			//looks to determine if the thumb had been
+> 	{					//created in the past.  If so, it returns the
+> 		$src = @readfile($tn);		//file for display.
+> 	}					//If not, case is called to determine the filetype
+> 	else					//added by Fran
+840,852c852,867
+< 		case 'gif':
+< 			$src = @imagecreatefromgif($file);
+< 			break;
+< 		case 'jpeg':
+< 		case 'jpg':
+< 		case 'jpe':
+< 			$src = @imagecreatefromjpeg($file);
+< 			break;
+< 		case 'png':
+< 			$src = @imagecreatefrompng($file);
+< 			break;
+< 		default:
+< 			die("$html_heading<p>Unsupported file extension.</p>");
+---
+> 		switch (ext($file))
+> 		{
+> 			case 'gif':
+> 				$src = @imagecreatefromgif($file);
+> 				break;
+> 			case 'jpeg':
+> 			case 'jpg':
+> 			case 'jpe':
+> 				$src = @imagecreatefromjpeg($file);
+> 				break;
+> 			case 'png':
+> 				$src = @imagecreatefrompng($file);
+> 				break;
+> 			default:
+> 				die("$html_heading<p>Unsupported file extension.</p>");
+> 		}
+865c880
+< 		imagejpeg($src, '', 95);
+---
+> 		imagejpeg($src, '', 60);   	//added 60 for lower quality thumb
+874,875c889,891
+< 		imagejpeg($thumb);
+< 		imagedestroy($thumb);
+---
+> 		imagejpeg($thumb, "$tn" ,60); 	//writes thumb to a file with a quality of 60
+> 		readfile($tn);			//reads file back out to display (should be done in a buffer
+> 		imagedestroy($thumb);		//I don't know enough about buffers yet)
