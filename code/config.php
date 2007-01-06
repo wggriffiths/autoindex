@@ -529,7 +529,7 @@ Default Language: <select name="language">
 <!--
 
 Powered by AutoIndex PHP Script (version <?php echo VERSION; ?>)
-Copyright (C) 2002-2006 Justin Hagstrom
+Copyright (C) 2002-2007 Justin Hagstrom
 http://autoindex.sourceforge.net
 
 Page generated in <?php echo round((microtime(true) - START_TIME) * 1000, 1); ?> milliseconds.

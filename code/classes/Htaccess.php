@@ -3,7 +3,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2005 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2007 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -54,7 +54,7 @@ if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
  * - Apache's Custom MD5 Crypt
  *
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
- * @version 1.0.0 (February 10, 2005)
+ * @version 1.0.1 (January 6, 2007)
  * @package AutoIndex
  */
 class Htaccess
@@ -262,6 +262,7 @@ class Htaccess
 					}
 				}
 			}
+			sleep(1);
 		}
 		if (!$validated)
 		{
