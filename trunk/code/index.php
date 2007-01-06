@@ -6,9 +6,9 @@
  *
  * @package AutoIndex
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
- * @version 1.2.0 (January 01, 2006)
+ * @version 1.2.1 (January 06, 2007)
  *
- * @copyright Copyright (C) 2002-2006 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2007 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -105,7 +105,7 @@ define('ADMIN', 3);
 define('LEVEL_TO_UPLOAD', USER);
 
 /** The version of AutoIndex PHP Script (the whole release, not based on individual files). */
-define('VERSION', '2.2.0');
+define('VERSION', '2.2.1');
 
 /**
  * This must be set to true for other included files to run. Setting it to
@@ -168,7 +168,16 @@ function simple_display($text, $title = 'Error on Page')
 	</style>
 </head>
 <body>
-<p>' . $text . '</p></body></html>';
+<p>' . $text . '</p></body></html>
+
+<!--
+
+Powered by AutoIndex PHP Script (version ' . VERSION . ')
+Copyright (C) 2002-2007 Justin Hagstrom
+http://autoindex.sourceforge.net
+
+-->
+';
 }
 
 /**

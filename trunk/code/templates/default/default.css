@@ -76,20 +76,19 @@
 	color: #000000;
 	text-decoration: none;
 }
-.autoindex_a:visited, .autoindex_a:active
-{
-	color: #00008F;
-	text-decoration: none;
-}
 .autoindex_a:link
 {
 	color: #0000FF;
 	text-decoration: none;
 }
-.autoindex_a:hover
+.autoindex_a:visited, .autoindex_a:active, .autoindex_a:hover
 {
-	color: #0000FF;
-	text-decoration: overline underline;
+	color: #00008F;
+	text-decoration: none;
+}
+.light_row:hover, .dark_row:hover
+{
+	background-color: #FFFFA8;
 }
 
 /* Buttons */
