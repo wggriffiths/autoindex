@@ -105,7 +105,7 @@ define('ADMIN', 3);
 define('LEVEL_TO_UPLOAD', USER);
 
 /** The version of AutoIndex PHP Script (the whole release, not based on individual files). */
-define('VERSION', '2.2.1');
+define('VERSION', '2.2.2');
 
 /**
  * This must be set to true for other included files to run. Setting it to

@@ -58,7 +58,7 @@ class TemplateInfo extends Template
 	private static function callback_sort($m)
 	{
 		global $subdir;
-		$m = strtolower($m[1]);
+		$m = Url::html_output(strtolower($m[1]));
 		$temp = $_SERVER['PHP_SELF'] . '?dir=' . $subdir
 		. '&amp;sort=' . $m . '&amp;sort_mode='
 		. (($_SESSION['sort'] == $m && $_SESSION['sort_mode'] == 'a') ? 'd' : 'a');
@@ -66,8 +66,8 @@ class TemplateInfo extends Template
 		if (isset($_GET['search'], $_GET['search_mode'])
 			&& $_GET['search'] != '' && $_GET['search_mode'] != '')
 		{
-			$temp .= '&amp;search=' . $_GET['search']
-			. '&amp;search_mode=' . $_GET['search_mode'];
+			$temp .= '&amp;search=' . Url::html_output($_GET['search'])
+			. '&amp;search_mode=' . Url::html_output($_GET['search_mode']);
 		}
 		return $temp;
 	}
