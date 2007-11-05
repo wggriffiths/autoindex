@@ -105,7 +105,7 @@ define('ADMIN', 3);
 define('LEVEL_TO_UPLOAD', USER);
 
 /** The version of AutoIndex PHP Script (the whole release, not based on individual files). */
-define('VERSION', '2.2.2');
+define('VERSION', '2.2.3');
 
 /**
  * This must be set to true for other included files to run. Setting it to
@@ -272,7 +272,7 @@ try
 		if (defined($key))
 		{
 			throw new ExceptionFatal(Url::html_output($key)
-			. ' is already defined in <em>' . basename($_SERVER['PHP_SELF'])
+			. ' is already defined in <em>' . basename(Url::html_output($_SERVER['PHP_SELF']))
 			. '</em>, and should not be in the config file.');
 		}
 		define($key, ($item != 'false' && $item != '0'));
@@ -453,7 +453,7 @@ try
 			|| stripos($_SERVER['HTTP_REFERER'], $_SERVER['SERVER_NAME']) === false))
 			{
 				$log -> add_entry('Leech Attempt');
-				$self = $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF']
+				$self = $_SERVER['SERVER_NAME'] . Url::html_output($_SERVER['PHP_SELF'])
 				. '?dir=' . Url::translate_uri($subdir);
 				throw new ExceptionDisplay('<h3>This PHP Script has an Anti-Leech feature turned on.</h3>'
 				. ' <p>Make sure you are accessing this file directly from <a class="autoindex_a" href="http://'

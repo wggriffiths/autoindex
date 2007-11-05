@@ -118,7 +118,7 @@ class DirItem extends Item
 				$this -> icon = (ICON_PATH ? $config -> __get('icon_path')
 				. 'back.png' : '');
 				$this -> size = new Size(true);
-				$this -> link = $_SERVER['PHP_SELF'] . '?dir='
+				$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir='
 				. Url::translate_uri(self::get_parent_dir($subdir));
 				$this -> parent_dir = $this -> new_icon = '';
 				$this -> a_time = $this -> m_time = false;
@@ -139,7 +139,7 @@ class DirItem extends Item
 			}
 			$this -> filename = substr($filename, 0, -1);
 			$this -> icon = $config -> __get('icon_path') . 'dir.png';
-			$this -> link = $_SERVER['PHP_SELF'] . '?dir='
+			$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir='
 			. Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))) . $filename);
 		}
 	}

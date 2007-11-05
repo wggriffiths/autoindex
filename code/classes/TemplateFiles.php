@@ -119,14 +119,14 @@ class TemplateFiles extends TemplateInfo
 			case 'delete_link':
 			{
 				return (($this -> is_admin && !$this -> temp_item -> __get('is_parent_dir')) ?
-				' [<a href="' . $_SERVER['PHP_SELF'] . '?action=delete&amp;dir=' . rawurlencode($subdir)
+				' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=delete&amp;dir=' . rawurlencode($subdir)
 				. '&amp;filename=' . rawurlencode($this -> temp_item -> __get('filename'))
 				. '" class="autoindex_small autoindex_a">' . $words -> __get('delete') . '</a>]' : '');
 			}
 			case 'rename_link':
 			{
 				return (($this -> is_admin && !$this -> temp_item -> __get('is_parent_dir')) ?
-				' [<a href="' . $_SERVER['PHP_SELF'] . '?action=rename&amp;dir=' . rawurlencode($subdir)
+				' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=rename&amp;dir=' . rawurlencode($subdir)
 				. '&amp;filename=' . rawurlencode($this -> temp_item -> __get('filename'))
 				. '" class="autoindex_small autoindex_a">' . $words -> __get('rename') . '</a>]' : '');
 			}
@@ -134,7 +134,7 @@ class TemplateFiles extends TemplateInfo
 			{
 				$slash = (($this -> temp_item instanceof DirItem) ? '/' : '');
 				return (($this -> is_mod && DESCRIPTION_FILE && !$this -> temp_item -> __get('is_parent_dir')) ?
-				' [<a href="' . $_SERVER['PHP_SELF'] . '?action=edit_description&amp;dir='
+				' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=edit_description&amp;dir='
 				. rawurlencode($subdir) . '&amp;filename='
 				. rawurlencode($this -> temp_item -> __get('filename')) . $slash
 				. '" class="autoindex_small autoindex_a">'
@@ -146,7 +146,7 @@ class TemplateFiles extends TemplateInfo
 				{
 					return '';
 				}
-				return ' [<a href="' . $_SERVER['PHP_SELF'] . '?action=ftp&amp;dir='
+				return ' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=ftp&amp;dir='
 				. rawurlencode($subdir) . '&amp;filename=' . rawurlencode($this -> temp_item -> __get('filename'))
 				. '" class="autoindex_small autoindex_a">' . $words->__get('upload to ftp') . '</a>]';
 			}

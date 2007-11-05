@@ -80,11 +80,11 @@ class FileItem extends Item
 			$this -> icon = $file_icon -> __toString();
 		}
 		$this -> downloads = (DOWNLOAD_COUNT && $downloads -> is_set($parent_dir . $filename) ? (int)($downloads -> __get($parent_dir . $filename)) : 0);
-		$this -> link = $_SERVER['PHP_SELF'] . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))))
+		$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))))
 		. '&amp;file=' . Url::translate_uri($filename);
 		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('png', 'jpg', 'jpeg', 'gif')))
 		{
-			$this -> thumb_link = ' <img src="' . $_SERVER['PHP_SELF']
+			$this -> thumb_link = ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
 			. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename)
 			. '" alt="' . $words -> __get('thumbnail of') . ' ' . $filename
 			. '" />';
@@ -93,7 +93,7 @@ class FileItem extends Item
 		if (MD5_SHOW && $size > 0 && $size / 1048576 <= $config -> __get('md5_show'))
 		{
 			$this -> md5_link = '<span class="autoindex_small">[<a class="autoindex_a" href="'
-			. $_SERVER['PHP_SELF'] . '?dir='
+			. Url::html_output($_SERVER['PHP_SELF']) . '?dir='
 			. Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))))
 			. '&amp;md5=' . Url::translate_uri($filename) . '">'
 			. $words -> __get('calculate md5sum') . '</a>]</span>';

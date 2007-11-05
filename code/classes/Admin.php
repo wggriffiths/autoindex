@@ -419,7 +419,7 @@ class Admin
 				. '</em></p><p>' . $words -> __get('new filename')
 				. ':<br /><span class="autoindex_small">('
 				. $words -> __get('you can also move the file by specifying a path')
-				. ')</span></p><form method="get" action="' . $_SERVER['PHP_SELF']
+				. ')</span></p><form method="get" action="' . Url::html_output($_SERVER['PHP_SELF'])
 				. '"><p><input type="hidden" name="filename" value="'
 				. $_GET['filename'] . '" />'
 				. '<input type="hidden" name="dir" value="' . $subdir
@@ -462,7 +462,7 @@ class Admin
 				throw new ExceptionDisplay('<p>'
 				. $words -> __get('are you sure you want to delete the file')
 				. ' <em>' . Url::html_output($_GET['filename']) . '</em>?</p>'
-				. '<form method="get" action="' . $_SERVER['PHP_SELF']
+				. '<form method="get" action="' . Url::html_output($_SERVER['PHP_SELF'])
 				. '"><p><input type="hidden" name="action" value="delete" />'
 				. '<input type="hidden" name="dir" value="' . $subdir
 				. '" /><input type="hidden" name="sure" value="true" />'
@@ -480,7 +480,7 @@ class Admin
 				global $words;
 				throw new ExceptionDisplay($words -> __get('add user')
 				. ':<form method="post" action="'
-				. $_SERVER['PHP_SELF'] . '?action=add_user"><p>'
+				. Url::html_output($_SERVER['PHP_SELF']) . '?action=add_user"><p>'
 				. $words -> __get('username') . ': <input type="text" name="username" /><br />'
 				. $words -> __get('password') . ': <input type="password" name="pass1" /><br />'
 				. $words -> __get('password') . ': <input type="password" name="pass2" /><br />'
@@ -500,7 +500,7 @@ class Admin
 						$_POST['pass1'], $_POST['pass2']);
 				}
 				throw new ExceptionDisplay('<form method="post" action="'
-				. $_SERVER['PHP_SELF'] . '?action=change_password">
+				. Url::html_output($_SERVER['PHP_SELF']) . '?action=change_password">
 				<p>Old password: <input type="password" name="old_pass" />
 				<br />New password: <input type="password" name="pass1" />
 				<br />New password: <input type="password" name="pass2" /></p>
@@ -514,7 +514,7 @@ class Admin
 				}
 				$accounts = new Accounts();
 				$out = '<form method="post" action="'
-				. $_SERVER['PHP_SELF'] . '?action=change_user_level">
+				. Url::html_output($_SERVER['PHP_SELF']) . '?action=change_user_level">
 				<p>Select user: <select name="username">';
 				foreach ($accounts as $this_user)
 				{
@@ -542,7 +542,7 @@ class Admin
 					throw new ExceptionDisplay('<p>'
 					. $words -> __get('are you sure you want to remove the user')
 					. ' <em>'.$_POST['username'] . '</em>?</p>'
-					. '<form method="post" action="' . $_SERVER['PHP_SELF'] . '?action=del_user">'
+					. '<form method="post" action="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=del_user">'
 					. '<p><input type="hidden" name="sure" value="true" /><input type="hidden" name="username" value="'
 					. $_POST['username'] . '" /><input type="submit" value="'
 					. $words -> __get('yes, delete') . '" /></p></form>');
@@ -550,7 +550,7 @@ class Admin
 				global $words;
 				$accounts = new Accounts();
 				$out = '<p>' . $words -> __get('select user to remove')
-				. ':</p><form method="post" action="' . $_SERVER['PHP_SELF']
+				. ':</p><form method="post" action="' . Url::html_output($_SERVER['PHP_SELF'])
 				. '?action=del_user"><p><select name="username">';
 				foreach ($accounts as $this_user)
 				{
@@ -611,7 +611,7 @@ class Admin
 						throw new ExceptionDisplay('<p>'
 						. $words -> __get('enter the new description for the file')
 						. ' <em>' . Url::html_output($_GET['filename'])
-						. '</em>:</p><form method="get" action="' . $_SERVER['PHP_SELF']
+						. '</em>:</p><form method="get" action="' . Url::html_output($_SERVER['PHP_SELF'])
 						. '"><p><input type="hidden" name="dir" value="'
 						. $subdir . '" /><input type="hidden" name="filename" value="'
 						. $_GET['filename'] . '" />'
@@ -669,13 +669,13 @@ class Admin
 				. '<p class="autoindex_small">You can also use wildcards (?, *, +) for each entry.<br />'
 				. 'If you want to do the opposite of "hidden files" - show only certain files - '
 				. 'put a colon in front of those entries.</p><form method="get" action="'
-				. $_SERVER['PHP_SELF'] . '"><p><input type="hidden" name="action" value="edit_hidden" />'
+				. Url::html_output($_SERVER['PHP_SELF']) . '"><p><input type="hidden" name="action" value="edit_hidden" />'
 				. '<input type="text" name="add" size="40" /> <input type="submit" value="'
 				. $words -> __get('add') . '" /></p></form>';
 				
 				$str .= '<hr class="autoindex_hr" /><h4>' . $words -> __get('remove a hidden file')
 				. ':</h4><form method="get" action="'
-				. $_SERVER['PHP_SELF'] . '"><p><select name="remove">';
+				. Url::html_output($_SERVER['PHP_SELF']) . '"><p><select name="remove">';
 				foreach ($hidden_list as $hid)
 				{
 					$str .= '<option>' . Url::html_output($hid) . '</option>';
@@ -722,13 +722,13 @@ class Admin
 				}
 				global $b_list, $words;
 				$str = '<h4>' . $words -> __get('add a new ban') . ':</h4><form method="get" action="'
-				. $_SERVER['PHP_SELF'] . '"><p><input type="hidden" name="action" value="edit_banned" />'
+				. Url::html_output($_SERVER['PHP_SELF']) . '"><p><input type="hidden" name="action" value="edit_banned" />'
 				. '<input type="text" name="add" size="40" /> <input type="submit" value="'
 				. $words -> __get('add') . '" /></p></form>';
 				
 				$str .= '<hr class="autoindex_hr" /><h4>'
 				. $words -> __get('remove a ban') . ':</h4><form method="get" action="'
-				. $_SERVER['PHP_SELF'] . '"><p><select name="remove">';
+				. Url::html_output($_SERVER['PHP_SELF']) . '"><p><select name="remove">';
 				foreach ($b_list as $ban)
 				{
 					$str .= '<option>' . $ban . '</option>';
@@ -760,7 +760,7 @@ class Admin
 				}
 				global $words;
 				throw new ExceptionDisplay($words -> __get('how many entries would you like to view')
-				. '?<form method="get" action="' . $_SERVER['PHP_SELF']
+				. '?<form method="get" action="' . Url::html_output($_SERVER['PHP_SELF'])
 				. '"><input type="hidden" name="action" value="view_log" />'
 				. '<input name="num" size="3" type="text" /> <input type="submit" value="'
 				. $words -> __get('view') . '" /></form>');
@@ -780,7 +780,7 @@ class Admin
 					global $words, $subdir;
 					throw new ExceptionDisplay('<p>' . $words -> __get('enter the new name')
 					. ':</p><form method="get" action="'
-					. $_SERVER['PHP_SELF'] . '"><p><input type="hidden" name="action" value="create_dir" />'
+					. Url::html_output($_SERVER['PHP_SELF']) . '"><p><input type="hidden" name="action" value="create_dir" />'
 					. '<input name="name" size="25" type="text" /> <input type="submit" value="'
 					. $words -> __get('create') . '" /><input type="hidden" name="dir" value="'
 					. $subdir . '" /></p></form>');
@@ -799,7 +799,7 @@ class Admin
 				<table border="0" cellpadding="8" cellspacing="0">
 				<tr class="paragraph"><td class="autoindex_td" style="padding: 8px;">
 				<p>Enter the name of the remote file you would like to copy:</p>
-				<form method="get" action="' . $_SERVER['PHP_SELF'] . '">
+				<form method="get" action="' . Url::html_output($_SERVER['PHP_SELF']) . '">
 				<p><input type="hidden" name="action" value="copy_url" />
 				<input type="hidden" name="dir" value="' . $dir . '" />
 				<input type="radio" name="protocol" value="http://" checked="checked" />http://
@@ -851,7 +851,7 @@ class Admin
 				{
 					unset($_SESSION['ftp']);
 					$text = '<p>Logout successful. <a class="autoindex_a" href="'
-					. $_SERVER['PHP_SELF'] . '?dir='
+					. Url::html_output($_SERVER['PHP_SELF']) . '?dir='
 					. rawurlencode($subdir) . '">Go back.</a></p>';
 				}
 				else if (isset($_SESSION['ftp']))
@@ -884,7 +884,7 @@ class Admin
 						throw new ExceptionDisplay('File successfully transferred from FTP server.');
 					}
 					global $words;
-					$text = '<ul><li><a href="' . $_SERVER['PHP_SELF']
+					$text = '<ul><li><a href="' . Url::html_output($_SERVER['PHP_SELF'])
 					. '?action=ftp&amp;dir=' . rawurlencode($subdir) . '&amp;set_dir='
 					. rawurlencode(DirItem::get_parent_dir($_SESSION['ftp']['directory']))
 					. '">../ (' . $words -> __get('parent directory') . ')</a></li>';
@@ -895,21 +895,21 @@ class Admin
 						$command = ($is_directory ? 'set_dir' : 'transfer');
 						$slash = ($is_directory ? '/' : '');
 						$text .= '<li><a class="autoindex_a" href="'
-						. $_SERVER['PHP_SELF'] . '?action=ftp&amp;'
+						. Url::html_output($_SERVER['PHP_SELF']) . '?action=ftp&amp;'
 						. $command . '=' . rawurlencode($file)
 						. '&amp;dir=' . rawurlencode($subdir) . '">'
 						. $file . $slash . '</a></li>' . "\n";
 					}
 					$text .= '</ul><p><a class="autoindex_a" href="'
-					. $_SERVER['PHP_SELF'] . '?action=ftp&amp;dir='
+					. Url::html_output($_SERVER['PHP_SELF']) . '?action=ftp&amp;dir='
 					. rawurlencode($subdir) . '&amp;ftp_logout=true">Logout of FTP server</a>
-					<br /><a href="' . $_SERVER['PHP_SELF'] . '?dir='
+					<br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?dir='
 					. rawurlencode($subdir) . '">Back to index.</a></p>';
 				}
 				else
 				{
 					$text = '<form method="post" action="'
-					. $_SERVER['PHP_SELF'] . '?action=ftp&amp;dir='
+					. Url::html_output($_SERVER['PHP_SELF']) . '?action=ftp&amp;dir='
 					. rawurlencode($subdir) . '"><table border="0" cellpadding="8" cellspacing="0">
 					<tr class="paragraph"><td class="autoindex_td" style="padding: 8px;">
 					<p>FTP server: <input type="text" name="host" />
@@ -920,7 +920,7 @@ class Admin
 					<span class="autoindex_small">(Leave these blank to login anonymously)</span>
 					</p><p>Directory: <input type="text" name="directory" value="./" />
 					</p><p><input type="submit" value="Connect" /></p></td></tr></table></form>
-					<p><a class="autoindex_a" href="' . $_SERVER['PHP_SELF']
+					<p><a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF'])
 					. '?dir=' . rawurlencode($subdir) . '">Back to index.</a></p>';
 				}
 				echo new Display($text);
@@ -944,43 +944,43 @@ class Admin
 		//only ADMIN accounts
 		if ($this -> level >= ADMIN) $str = '
 <p>
-	<a href="' . $_SERVER['PHP_SELF'] . '?action=config" class="autoindex_a">'
+	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=config" class="autoindex_a">'
 	. $words -> __get('reconfigure script') . '</a>
 </p>
 <p>
-	<a href="' . $_SERVER['PHP_SELF'] . '?action=edit_hidden" class="autoindex_a">'
+	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=edit_hidden" class="autoindex_a">'
 	. $words -> __get('edit list of hidden files') . '</a>
-	<br /><a href="' . $_SERVER['PHP_SELF'] . '?action=edit_banned" class="autoindex_a">'
+	<br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=edit_banned" class="autoindex_a">'
 	. $words -> __get('edit ban list') . '</a>
 </p>
 <p>
-	<a href="' . $_SERVER['PHP_SELF'] . '?action=create_dir&amp;dir=' . rawurlencode($subdir)
+	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=create_dir&amp;dir=' . rawurlencode($subdir)
 	. '" class="autoindex_a">' . $words -> __get('create new directory in this folder')
-	. '</a><br /><a href="' . $_SERVER['PHP_SELF'] . '?action=copy_url&amp;dir='
+	. '</a><br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=copy_url&amp;dir='
 	. $subdir . '" class="autoindex_a">' . $words -> __get('copy url') . '</a>
 </p>
 <p>
-	<a href="' . $_SERVER['PHP_SELF'] . '?action=view_log" class="autoindex_a">'
+	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=view_log" class="autoindex_a">'
 	. $words -> __get('view entries from log file') . '</a>
-	<br /><a href="' . $_SERVER['PHP_SELF'] . '?action=stats" class="autoindex_a">'
+	<br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=stats" class="autoindex_a">'
 	. $words -> __get('view statistics from log file') . '</a>
 </p>
 <p>
-	<a href="' . $_SERVER['PHP_SELF'] . '?action=add_user" class="autoindex_a">'
+	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=add_user" class="autoindex_a">'
 	. $words -> __get('add new user') . '</a>
-	<br /><a href="' . $_SERVER['PHP_SELF'] . '?action=del_user" class="autoindex_a">'
+	<br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=del_user" class="autoindex_a">'
 	. $words -> __get('delete user') . '</a>
-	<br /><a href="' . $_SERVER['PHP_SELF'] . '?action=change_user_level" class="autoindex_a">
+	<br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=change_user_level" class="autoindex_a">
 	Change a user\'s level</a>
 </p>';
 		//MODERATOR and ADMIN accounts
 		if ($this -> level >= MODERATOR) $str .= '
 <p>
-	<a href="' . $_SERVER['PHP_SELF'] . '?action=change_password" class="autoindex_a">
+	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=change_password" class="autoindex_a">
 	Change your password</a>
 </p>
 <p>
-	<a href="' . $_SERVER['PHP_SELF'] . '?action=ftp&amp;dir=' . rawurlencode($subdir)
+	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=ftp&amp;dir=' . rawurlencode($subdir)
 	. '" class="autoindex_a">FTP browser</a>
 </p>';
 		return $str;

@@ -59,7 +59,7 @@ class TemplateInfo extends Template
 	{
 		global $subdir;
 		$m = Url::html_output(strtolower($m[1]));
-		$temp = $_SERVER['PHP_SELF'] . '?dir=' . $subdir
+		$temp = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . $subdir
 		. '&amp;sort=' . $m . '&amp;sort_mode='
 		. (($_SESSION['sort'] == $m && $_SESSION['sort_mode'] == 'a') ? 'd' : 'a');
 		
@@ -83,7 +83,7 @@ class TemplateInfo extends Template
 			case 'archive_link':
 			{
 				global $config;
-				return $_SERVER['PHP_SELF'] . '?archive=true&amp;dir='
+				return Url::html_output($_SERVER['PHP_SELF']) . '?archive=true&amp;dir='
 				. substr($this -> dir_list -> __get('dir_name'), strlen($config -> __get('base_dir')));
 			}
 			case 'total_size':
@@ -129,7 +129,7 @@ class TemplateInfo extends Template
 					return '&lt;&lt;';
 				}
 				return '<a class="autoindex_a" href="'
-				. $_SERVER['PHP_SELF'] . '?page=' . ($page - 1)
+				. Url::html_output($_SERVER['PHP_SELF']) . '?page=' . ($page - 1)
 				. '&amp;dir=' . substr($this -> dir_list -> __get('dir_name'),
 					strlen($config -> __get('base_dir'))) . '">&lt;&lt;</a>';
 			}
@@ -145,7 +145,7 @@ class TemplateInfo extends Template
 					return '&gt;&gt;';
 				}
 				return '<a class="autoindex_a" href="'
-				. $_SERVER['PHP_SELF'] . '?page=' . ($page + 1)
+				. Url::html_output($_SERVER['PHP_SELF']) . '?page=' . ($page + 1)
 				. '&amp;dir=' . substr($this -> dir_list -> __get('dir_name'),
 					strlen($config -> __get('base_dir'))) . '">&gt;&gt;</a>';
 			}

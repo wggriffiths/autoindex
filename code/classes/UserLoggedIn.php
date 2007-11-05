@@ -48,7 +48,7 @@ class UserLoggedIn extends User
 	public function login_box()
 	{
 		global $words, $you, $subdir;
-		$txt = '<p><a class="autoindex_a" href="' . $_SERVER['PHP_SELF']
+		$txt = '<p><a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF'])
 		. '?dir=' . (isset($subdir) ?  rawurlencode($subdir) : '')
 		. '&amp;logout=true">' . $words -> __get('logout')
 		. ' [ ' . Url::html_output($this -> username) . ' ]</a></p>';
@@ -78,7 +78,7 @@ class UserLoggedIn extends User
 		$this -> sha1_pass = $this -> username = '';
 		session_unset();
 		session_destroy();
-		$home = new Url($_SERVER['PHP_SELF'], true);
+		$home = new Url(Url::html_output($_SERVER['PHP_SELF']), true);
 		$home -> redirect();
 	}
 	

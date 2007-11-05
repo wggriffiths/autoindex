@@ -79,11 +79,11 @@ class DirectoryListDetailed extends DirectoryList
 		global $config, $subdir;
 		$exploded = explode('/', $subdir);
 		$c = count($exploded) - 1;
-		$temp = '<a class="autoindex_a" href="' . $_SERVER['PHP_SELF'] . '?dir=">'
+		$temp = '<a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF']) . '?dir=">'
 		. Url::html_output(substr(str_replace('/', ' / ', $config -> __get('base_dir')), 0, -2)) . '</a>/ ';
 		for ($i = 0; $i < $c; $i++)
 		{
-			$temp .= '<a class="autoindex_a" href="' . $_SERVER['PHP_SELF']
+			$temp .= '<a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF'])
 			. '?dir=';
 			for ($j = 0; $j <= $i; $j++)
 			{

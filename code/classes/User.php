@@ -94,7 +94,7 @@ class User
 		if (USE_LOGIN_SYSTEM)
 		{
 			global $words, $subdir;
-			$str .= '<form action="' . $_SERVER['PHP_SELF'] . '?dir='
+			$str .= '<form action="' . Url::html_output($_SERVER['PHP_SELF']) . '?dir='
 			. (isset($subdir) ? rawurlencode($subdir) : '')
 			. '" method="post"><table><tr class="paragraph"><td>'
 			. $words -> __get('username') . ':</td><td><input type="text" name="username" />'

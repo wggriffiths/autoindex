@@ -122,7 +122,7 @@ class Logging
 		}
 		global $words;
 		$out .= '</table><p><a class="autoindex_a" href="'
-		. $_SERVER['PHP_SELF'] . '">' . $words -> __get('continue')
+		. Url::html_output($_SERVER['PHP_SELF']) . '">' . $words -> __get('continue')
 		. '.</a></p>';
 		echo new Display($out);
 		die();

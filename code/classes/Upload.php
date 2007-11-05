@@ -91,7 +91,7 @@ class Upload
 		. '<strong>' . $words -> __get('uploaded files')
 		. "</strong>: $uploaded_files</p><p><strong>"
 		. $words -> __get('failed files') . "</strong>: $errors"
-		. '<p><a class="autoindex_a" href="' . $_SERVER['PHP_SELF'];
+		. '<p><a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF']);
 		if (isset($_GET['dir']))
 		{
 			$str .= '?dir=' . Url::translate_uri($_GET['dir']);
@@ -121,7 +121,7 @@ class Upload
 		if (isset($_GET['num_uploads']) && (int)$_GET['num_uploads'] > 0)
 		{
 			$str = '<form enctype="multipart/form-data" action="'
-			. $_SERVER['PHP_SELF'] . '?dir=' . $subdir . '" method="post"><p>';
+			. Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . $subdir . '" method="post"><p>';
 			$num = min((int)$_GET['num_uploads'], 100);
 			for ($i = 0; $i < $num; $i++)
 			{
@@ -133,7 +133,7 @@ class Upload
 			. $words -> __get('upload') . '" /></p></form>';
 			$str = '<table><tr class="paragraph"><td class="autoindex_td" style="padding: 8px;">'
 			. $str . '<p><a class="autoindex_a" href="'
-			. $_SERVER['PHP_SELF'];
+			. Url::html_output($_SERVER['PHP_SELF']);
 			if (isset($_GET['dir']))
 			{
 				$str .= '?dir=' . Url::translate_uri($_GET['dir']);
@@ -142,7 +142,7 @@ class Upload
 			echo new Display($str);
 			die();
 		}
-		return '<form action="' . $_SERVER['PHP_SELF'] . '" method="get"><p>'
+		return '<form action="' . Url::html_output($_SERVER['PHP_SELF']) . '" method="get"><p>'
 		. $words -> __get('upload') . ' <input type="text" size="3" value="1" name="num_uploads" /> '
 		. $words -> __get('files to this folder') . '<input class="button" type="submit" value="'
 		. $words -> __get('upload') . '" /><input type="hidden" name="dir" value="'

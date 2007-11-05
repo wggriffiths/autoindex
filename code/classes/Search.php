@@ -54,7 +54,7 @@ class Search extends DirectoryListDetailed
 		$search = (isset($_GET['search']) ? Url::html_output($_GET['search']) : '');
 		$mode = (isset($_GET['search_mode']) ? self::clean_mode($_GET['search_mode']) : 'f');
 		$modes = array('files' => 'f', 'folders' => 'd', 'both' => 'fd');
-		$out = '<form action="' . $_SERVER['PHP_SELF'] . '" method="get">'
+		$out = '<form action="' . Url::html_output($_SERVER['PHP_SELF']) . '" method="get">'
 		. '<p><input type="hidden" name="dir" value="' . $subdir . '" />'
 		. '<input type="text" name="search" value="' . $search
 		. '" /><br /><select name="search_mode">';
@@ -176,7 +176,7 @@ class Search extends DirectoryListDetailed
 			}
 		}
 		global $words, $config, $subdir;
-		$link = ' <a class="autoindex_a" href="' . $_SERVER['PHP_SELF']
+		$link = ' <a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF'])
 		. '?dir=' . Url::translate_uri($subdir) . '">'
 		. Url::html_output($dir) . '</a> ';
 		$this -> path_nav = $words -> __get('search results for')
