@@ -34,7 +34,7 @@ if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
  * Represents URLs. Deals with special characters and redirection/downloading.
  *
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
- * @version 1.0.3 (August 19, 2004)
+ * @version 1.0.4 (November 9, 2007)
  * @package AutoIndex
  */
 class Url
@@ -121,7 +121,16 @@ class Url
 	 */
 	public static function clean_input($url)
 	{
-		return self::eval_dir(rawurldecode($url));
+		$url = rawurldecode( $url );
+		$newURL = '';
+		for ( $i = 0; $i < strlen( $url ); $i++ ) //loop to remove all null chars
+		{
+			if ( ord($url[$i]) != 0 )
+			{
+				$newURL .= $url[$i];
+			}
+		}
+		return self::eval_dir( $newURL );
 	}
 	
 	/**
