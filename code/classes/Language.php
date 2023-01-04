@@ -67,7 +67,7 @@ class Language
 		$list = array();
 		while (($file = readdir($hndl)) !== false)
 		{
-			if (@is_file($path . $file) && preg_match('/^[a-z][2](_[a-z][2])?'
+			if (@is_file($path . $file) && preg_match('/^[a-z]{2}(_[a-z]{2})?'
 			. preg_quote(LANGUAGE_FILE_EXT, '/') . '$/i', $file))
 			{
 				$list[] = $file;
