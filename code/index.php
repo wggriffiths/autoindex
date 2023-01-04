@@ -204,6 +204,8 @@ function __autoload($class)
 	}
 }
 
+spl_autoload_register('_autoloader');
+
 /**
  * This is used to report a fatal error that we cannot display with the Display
  * class. All Exceptions used in AutoIndex should inherit from this class.
