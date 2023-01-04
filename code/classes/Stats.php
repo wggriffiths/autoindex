@@ -485,7 +485,7 @@ class Stats
 			$c_code = (isset($country_codes[strtolower($c)]) ? ' <span class="autoindex_small">('
 			. $country_codes[strtolower($c)] . ')</span>' : '');
 			$class = (($i++ % 2) ? 'dark_row' : 'light_row');
-			$str .= "<tr class='$class'><td class='autoindex_td'>$c{$c_code}</td><td class='autoindex_td'>$num</td><td class='autoindex_td'>"
+			$str .= "<tr class='$class'><td class='autoindex_td'>$c[$c_code]</td><td class='autoindex_td'>$num</td><td class='autoindex_td'>"
 			. number_format($num / $this -> num_days, 1) . "</td></tr>\n";
 		}
 		$str .= '</table><p><a class="autoindex_a" href="'
