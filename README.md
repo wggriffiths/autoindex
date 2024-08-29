@@ -1,5 +1,7 @@
 # AutoIndex PHP
 
+Updated to work with PHP 8.2 also tested with PHP 8.3
+
 AutoIndex is a PHP script that makes a table that lists the files in a directory, and lets users access the files and subdirectories.
 It includes searching, icons for each file type, an admin panel, uploads, access logging, file descriptions, and more.
 
